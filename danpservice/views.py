@@ -12,12 +12,13 @@ def index(request):
 @csrf_exempt
 def addtoken(request):
     if request.method == 'POST':
-        userid = request.POST["userid"]
-        token = request.POST["token"]
-        dict = {
-            'userid': userid,
-            'token': token
-        }
+        data = request.body
+        # userid = request.POST["userid"]
+        # token = request.POST["token"]
+        # dict = {
+        #     'userid': userid,
+        #     'token': token
+        # }
         # con = sqlite3.connect('example.db')
         # cur = con.cursor()
         #
@@ -26,10 +27,10 @@ def addtoken(request):
         # con.commit()
 
     elif request.method == 'GET':
-        dict ={ "get method":" no token"}
+        data ={ "get method":" no token"}
 
     #return JsonResponse(dict, safe=False)
-    data = request.body
+
     #print(str(data, 'UTF-8'))
     return HttpResponse(str(data, 'UTF-8'), content_type="application/json")
 
