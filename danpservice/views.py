@@ -21,7 +21,7 @@ def addtoken(request):
             'message': 'welcome'
         }
 
-    return HttpResponse(dict)
+    return HttpResponse(token)
 
 
 def sendmessage(request):
