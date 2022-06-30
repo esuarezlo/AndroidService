@@ -28,7 +28,10 @@ def addtoken(request):
     elif request.method == 'GET':
         dict ={ "get method":" no token"}
 
-    return JsonResponse(dict, safe=False)
+    #return JsonResponse(dict, safe=False)
+    data = request.body
+    #print(str(data, 'UTF-8'))
+    return HttpResponse(str(data, 'UTF-8'), content_type="application/json")
 
 
 def sendmessage(request):
