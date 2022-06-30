@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 import sqlite3
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 def index(request):
     return render(request, 'danpservice/index.html')
 
 
+@csrf_exempt
 def addtoken(request):
     if request.method == 'POST':
         userid = request.POST["userid"]
