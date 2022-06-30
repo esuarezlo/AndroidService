@@ -15,17 +15,17 @@ def addtoken(request):
             'userid': userid,
             'token': token
         }
-        con = sqlite3.connect('example.db')
-        cur = con.cursor()
-
-        # Create table
-        cur.execute('''CREATE TABLE tokens (token text)''')
-        con.commit()
+        # con = sqlite3.connect('example.db')
+        # cur = con.cursor()
+        #
+        # # Create table
+        # cur.execute('''CREATE TABLE tokens (token text)''')
+        # con.commit()
 
     elif request.method == 'GET':
-        token = "get method, no token"
+        dict ={ "get method":" no token"}
 
-    return HttpResponse("token")
+    return JsonResponse(dict, safe=False)
 
 
 def sendmessage(request):
