@@ -17,9 +17,7 @@ def addtoken(request):
         }
 
     elif request.method == 'GET':
-        dict = {
-            'message': 'welcome'
-        }
+        token = "get method, no token"
 
     return HttpResponse(token)
 
