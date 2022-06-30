@@ -15,12 +15,13 @@ def addtoken(request):
             'userid': userid,
             'token': token
         }
-    else:
-        dict={
-            "message":"Welcome"
+
+    elif request.method == 'GET':
+        dict = {
+            'message': 'welcome'
         }
 
-        return JsonResponse(dict, safe=False)
+    return JsonResponse(dict, safe=False)
 
 
 def sendmessage(request):
