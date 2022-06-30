@@ -18,12 +18,13 @@ from django.urls import path
 
 import hello.views
 from hello.views import index, users
-from danpservice.views import addtoken
+from danpservice.views import addtoken, sendmessage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', index),
     path('hello/users', users),
+    path('danpservice/', index),
     path('danpservice/addtoken', addtoken),
-    path('danpservice/sendmessage', addtoken),
+    path('danpservice/sendmessage', sendmessage),
 ]
