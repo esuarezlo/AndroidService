@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 
 # Create your views here.
@@ -21,7 +21,7 @@ def addtoken(request):
             'message': 'welcome'
         }
 
-    return JsonResponse(dict, safe=False)
+    return HttpResponse(dict)
 
 
 def sendmessage(request):
